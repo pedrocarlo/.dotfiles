@@ -15,6 +15,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.neovim
+          pkgs.delta
         ];
 
       # services.nix-daemon.enable = true;
