@@ -7,16 +7,9 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
     let
       configuration = { pkgs, ... }: {
-        # List packages installed in system profile. To search by name, run:
-        # $ nix-env -qaP | grep wget
-        environment.systemPackages =
-          [ pkgs.neovim pkgs.delta pkgs.nil pkgs.nixfmt ];
-
-        # services.nix-daemon.enable = true;
-
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
 
@@ -36,8 +29,20 @@
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air
-      darwinConfigurations."pedro" =
-        nix-darwin.lib.darwinSystem { modules = [ configuration ]; };
+      darwinConfigurations."pedro" = nix-darwin.lib.darwinSystem {
+        modules = [ ./modules/apps.nix configuration ];
+      };
+
+      #   darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
+      #   inherit system specialArgs;
+      #   modules = [
+      #     ./modules/nix-core.nix
+      #     ./modules/system.nix
+      #     ./modules/apps.nix
+
+      #     ./modules/host-users.nix
+      #   ];
+      # };
 
       darwinPackages = self.darwinConfigurations."pedro".pkgs;
     };
