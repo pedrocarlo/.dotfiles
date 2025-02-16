@@ -17,7 +17,7 @@
   # But on macOS, it's less stable than homebrew.
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
-  
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -26,7 +26,8 @@
     nil
     nixfmt
     go-task
-    # oh-my-zsh
+    # ghostty currently having an issue with version of ghostty
+    oh-my-zsh
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
