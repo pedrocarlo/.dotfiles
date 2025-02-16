@@ -10,18 +10,6 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
     let
       configuration = { pkgs, ... }: {
-        # Necessary for using flakes on this system.
-        nix.settings.experimental-features = "nix-command flakes";
-
-        # Enable alternative shell support in nix-darwin.
-        programs.zsh.enable = true;
-
-        # Set Git commit hash for darwin-version.
-        system.configurationRevision = self.rev or self.dirtyRev or null;
-
-        # Used for backwards compatibility, please read the changelog before changing.
-        # $ darwin-rebuild changelog
-        system.stateVersion = 6;
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
@@ -30,19 +18,13 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air
       darwinConfigurations."pedro" = nix-darwin.lib.darwinSystem {
-        modules = [ ./modules/apps.nix configuration ];
+        modules = [
+          configuration
+          ./modules/apps.nix
+          ./modules/system.nix
+          ./modules/nix-core.nix
+        ];
       };
-
-      #   darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      #   inherit system specialArgs;
-      #   modules = [
-      #     ./modules/nix-core.nix
-      #     ./modules/system.nix
-      #     ./modules/apps.nix
-
-      #     ./modules/host-users.nix
-      #   ];
-      # };
 
       darwinPackages = self.darwinConfigurations."pedro".pkgs;
     };
