@@ -16,6 +16,7 @@
       environment.systemPackages =
         [ pkgs.neovim
           pkgs.delta
+          pkgs.nil
         ];
 
       # services.nix-daemon.enable = true;
