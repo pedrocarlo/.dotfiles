@@ -114,16 +114,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# opam configuration
-[[ ! -r /Users/pedro/.opam/opam-init/init.zsh ]] || source /Users/pedro/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-
+[[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
 
 source $(brew --prefix nvm)/nvm.sh
-
-
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
@@ -147,7 +140,8 @@ alias ls="eza --color=auto --git --no-filesize --icons=always --no-time --no-use
 eval "$(zoxide init zsh)"
 
 # add ~/.local/bin to path
-export PATH="$HOME/.local/bin:$PATH"export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
