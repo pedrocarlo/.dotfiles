@@ -3,4 +3,4 @@ version: "3"
 tasks:
   install:
     cmds:
-      - ln -s ~/.dotfiles/zsh/.zshenv ~/.zshenv
+      - ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
