@@ -8,7 +8,7 @@
     postman
     # imagemagick
     ocrmypdf
-    # sqlite
+    sqlite
 
     # misc
     tree
@@ -60,9 +60,16 @@
         fi
       '';
 
+      initExtra = ''
+        export PATH="$HOME/.local/bin:$PATH"
+      '';
+
       oh-my-zsh = {
         enable = true;
         plugins = [ "git" "zoxide" ];
+        extraConfig = ''
+          export ZOXIDE_CMD_OVERRIDE=cd
+        '';
       };
     };
 
