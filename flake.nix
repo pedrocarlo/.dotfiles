@@ -33,6 +33,7 @@
           ./nix/modules/apps.nix
           ./nix/modules/system.nix
           ./nix/modules/nix-core.nix
+          ./nix/modules/fonts.nix
 
           # home manager
           home-manager.darwinModules.home-manager
