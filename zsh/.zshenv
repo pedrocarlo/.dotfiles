@@ -1,2 +1,1 @@
-. "$HOME/.cargo/env"
-ZDOTDIR=~/.dotfiles/zsh
+/nix/store/92a62gn48hn0r1q6h0d524a0nd8kk1gp-home-manager-files/.dotfiles/zsh/.zshenv

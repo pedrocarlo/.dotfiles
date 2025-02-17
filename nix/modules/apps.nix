@@ -26,10 +26,18 @@
     nil
     nixfmt
     go-task
-    # ghostty currently having an issue with version of ghostty
+    # ghostty currently having an issue with its version of ghostty
+    # zsh stuff
     oh-my-zsh
+    zsh-powerlevel10k
+    
     ripgrep
     fzf
+    zoxide
+    eza
+    bat
+    btop
+    gh
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh

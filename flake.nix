@@ -13,12 +13,13 @@
     let
       username = "pedro";
       hostname = "pedro";
+      rootPath = ./.;
       configuration = { pkgs, ... }: {
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
-      specialArgs = { inherit username hostname; };
+      specialArgs = { inherit username hostname rootPath; };
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air
@@ -26,9 +27,9 @@
         inherit specialArgs;
         modules = [
           configuration
-          ./modules/apps.nix
-          ./modules/system.nix
-          ./modules/nix-core.nix
+          ./nix/modules/apps.nix
+          ./nix/modules/system.nix
+          ./nix/modules/nix-core.nix
 
           # home manager
           home-manager.darwinModules.home-manager
@@ -37,7 +38,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
             users.users.${username}.home = "/Users/${username}";
-            home-manager.users.${username} = import ./home;
+            home-manager.users.${username} = import ./nix/home;
           }
         ];
       };
