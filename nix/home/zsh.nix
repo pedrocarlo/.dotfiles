@@ -17,6 +17,9 @@
       diff = "batdiff";
       rg = "batgrep";
       man = "batman";
+
+      vi = "nvim";
+      vim = "nvim";
     };
 
     plugins = [
