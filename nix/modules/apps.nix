@@ -28,6 +28,8 @@
     go-task
     # ghostty currently having an issue with version of ghostty
     oh-my-zsh
+    ripgrep
+    fzf
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
