@@ -1,4 +1,4 @@
-{ pkgs, rootPath, ... }: {
+{ pkgs, zshPath, ... }: {
   home.packages = with pkgs; [
     # utils
     # jq # A lightweight and flexible command-line JSON processor
@@ -41,7 +41,7 @@
       plugins = [
         {
           name = "powerlevel10k-config";
-          src = ./${rootPath}/zsh;
+          src = zshPath;
           file = ".p10k.zsh";
         }
         {

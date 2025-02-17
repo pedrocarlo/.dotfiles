@@ -27,3 +27,6 @@ Temporary Items
 .apdisk
 
 .zcompdump*
+zsh/plugins
+.zshrc
+.zshenv
