@@ -9,7 +9,8 @@
     # imagemagick
     ocrmypdf
     sqlite
-
+    pnpm
+    rustup
     # misc
     tree
 
