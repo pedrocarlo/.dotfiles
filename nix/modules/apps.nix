@@ -25,6 +25,8 @@
     git
     git-lfs
     delta
+    lazygit
+
     nil
     nixfmt
     go-task
@@ -42,6 +44,8 @@
     btop
     gh
     fastfetch
+
+    clang-tools
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
