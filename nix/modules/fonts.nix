@@ -1,4 +1,1 @@
-{ pkgs, ... }: {
-  fonts.packages =
-    [ (pkgs.nerdfonts.override) { fonts = [ "JetBrainsMono" ]; } ];
-}
+{ pkgs, ... }: { fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ]; }
