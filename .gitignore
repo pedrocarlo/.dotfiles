@@ -28,3 +28,8 @@ Temporary Items
 
 .zcompdump*
 zsh/plugins
+
+# .config ignore
+.config/qBittorrent
+.config/stripe
+.config/configstore

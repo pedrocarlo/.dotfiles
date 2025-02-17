@@ -1,6 +1,6 @@
 version: "3"
 
 tasks:
-  install:
+  symlink:
     cmds:
-      - ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+      - ln -s ~/.dotfiles/.config ~/.config
