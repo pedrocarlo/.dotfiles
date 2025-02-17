@@ -12,17 +12,18 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
     let
       username = "pedro";
+      hostname = "pedro";
       configuration = { pkgs, ... }: {
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
-      specialArgs = inputs // { inherit username; };
+      specialArgs = { inherit username hostname; };
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air
-      darwinConfigurations.${username} = nix-darwin.lib.darwinSystem {
-        inherit inputs;
+      darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
+        inherit specialArgs;
         modules = [
           configuration
           ./modules/apps.nix
@@ -35,6 +36,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
+            users.users.${username}.home = "/Users/${username}";
             home-manager.users.${username} = import ./home;
           }
         ];
