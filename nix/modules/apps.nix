@@ -21,7 +21,9 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    neovim
+    # git
+    git
+    git-lfs
     delta
     nil
     nixfmt
@@ -30,7 +32,8 @@
     # zsh stuff
     oh-my-zsh
     zsh-powerlevel10k
-    
+    # terminal stuff
+    neovim
     ripgrep
     fzf
     zoxide

@@ -1,4 +1,5 @@
 { pkgs, zshPath, ... }: {
+
   home.packages = with pkgs; [
     # utils
     # jq # A lightweight and flexible command-line JSON processor
@@ -32,11 +33,15 @@
         highlight = "fg=#939393,bold,underline";
       };
       dotDir = ".dotfiles/zsh";
-      # promptInit =
-      #   "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       shellAliases = {
         ls =
           "eza --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions --grid --show-symlinks --follow-symlinks";
+
+        #-------------Bat related------------
+        cat = "bat";
+        diff = "batdiff";
+        rg = "batgrep";
+        man = "batman";
       };
 
       plugins = [
@@ -74,43 +79,5 @@
       };
     };
 
-    git = {
-      enable = true;
-      signing.format = "ssh";
-      delta = { enable = true; };
-      extraConfig = {
-        init.defaultBranch = "main";
-        user = {
-          name = "pedrocarlo";
-          email = "pedro.muniz.carlo@gmail.com";
-        };
-        filter = {
-          "lfs" = {
-            clean = "git-lfs clean -- %f";
-            smudge = "git-lfs smudge -- %f";
-            process = "git-lfs filter-process";
-            required = true;
-          };
-        };
-        core = { editor = "nvim"; };
-
-        delta = {
-          navigate = true;
-          dark = true;
-          line-numbers = true;
-          side-by-side = true;
-        };
-        merge = { conflictstyle = "zdiff3"; };
-      };
-    };
-
-    # A modern replacement for ‘ls’
-    # useful in bash/zsh prompt, not in nushell.
-    # eza = {
-    #   enable = true;
-    #   git = true;
-    #   icons = true;
-    #   enableZshIntegration = true;
-    # };
   };
 }
