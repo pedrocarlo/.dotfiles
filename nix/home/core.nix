@@ -9,7 +9,7 @@
     postman
     # imagemagick
     ocrmypdf
-    sqlite
+    # sqlite
     pnpm
     rustup
     # misc
