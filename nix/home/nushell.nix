@@ -1,6 +1,28 @@
-{ pkgs, zshPath, ... }: {
+{ pkgs, ... }: {
 
-  home.shell.enableZshIntegration = true;
+  home.shell.enableNushellIntegration = true;
+
+  carapace.enable = true;
+  carapace.enableNushellIntegration = true;
+
+  programs.nushell = {
+    enable = true;
+    configFile.source = ../../nu/config.nu;
+
+    shellAliases = {
+      ls =
+        "eza --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions --grid --show-symlinks --follow-symlinks";
+
+      #-------------Bat related------------
+      cat = "bat";
+      diff = "batdiff";
+      rg = "batgrep";
+      man = "batman";
+
+      vi = "nvim";
+      vim = "nvim";
+    };
+  };
 
   programs.zsh = {
     enable = true;
@@ -24,19 +46,6 @@
       vim = "nvim";
     };
 
-    # plugins = [
-    #   {
-    #     name = "powerlevel10k-config";
-    #     src = zshPath;
-    #     file = ".p10k.zsh";
-    #   }
-    #   {
-    #     name = "zsh-powerlevel10k";
-    #     src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
-    #     file = "powerlevel10k.zsh-theme";
-    #   }
-    # ];
-
     initExtraFirst = ''
       # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
       # Initialization code that may require console input (password prompts, [y/n]
@@ -50,12 +59,5 @@
       export PATH="$HOME/.local/bin:$PATH"
     '';
 
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "zoxide" ];
-      extraConfig = ''
-        export ZOXIDE_CMD_OVERRIDE=cd
-      '';
-    };
   };
 }

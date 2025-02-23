@@ -17,12 +17,16 @@
         path = ./zsh;
         name = "zsh";
       };
+      rootPath = builtins.path {
+        path = ./.;
+        name = "";
+      };
       configuration = { pkgs, ... }: {
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
-      specialArgs = { inherit username hostname zshPath; };
+      specialArgs = { inherit username hostname zshPath rootPath; };
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air

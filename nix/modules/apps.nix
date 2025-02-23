@@ -30,7 +30,12 @@
     nil
     nixfmt
     go-task
-    # ghostty currently having an issue with its version of ghostty
+    # currently having an issue with its version of ghostty
+    # ghostty 
+
+    # nushell stuff
+    nushell
+
     # zsh stuff
     oh-my-zsh
     zsh-powerlevel10k
@@ -44,6 +49,7 @@
     btop
     gh
     fastfetch
+    starship
 
     clang-tools
   ];
