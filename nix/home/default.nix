@@ -1,9 +1,9 @@
-{ username, ... }:
+{ pkgs, username, ... }:
 
 {
   # import sub modules
   imports =
-    [ ./core.nix ./git.nix ./zsh.nix ./bat.nix ./zoxide.nix ./starship.nix ];
+    [ ./core.nix ./git.nix ./zsh.nix ./nushell.nix ./bat.nix ./zoxide.nix ./starship.nix ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

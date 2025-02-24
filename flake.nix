@@ -17,12 +17,16 @@
         path = ./zsh;
         name = "zsh";
       };
+      nushellPath = builtins.path {
+        path = ./.config/config.nu;
+        name = "config.nu";
+      };
       configuration = { pkgs, ... }: {
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
-      specialArgs = { inherit username hostname zshPath; };
+      specialArgs = { inherit username hostname zshPath nushellPath; };
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air

@@ -3,7 +3,7 @@
   home.shell.enableZshIntegration = true;
 
   programs.zsh = {
-    enable = true;
+    enable = false;
     enableCompletion = true;
     autosuggestion = {
       enable = true;

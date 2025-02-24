@@ -50,6 +50,7 @@
     gh
     fastfetch
     starship
+    carapace
 
     clang-tools
   ];
