@@ -17,13 +17,12 @@
         path = ./zsh;
         name = "zsh";
       };
-      starshipPath = ./.config/starship.toml;
       configuration = { pkgs, ... }: {
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
-      specialArgs = { inherit username hostname zshPath starshipPath; };
+      specialArgs = { inherit username hostname zshPath; };
     in {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#pedros-MacBook-Air
