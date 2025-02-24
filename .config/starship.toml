@@ -1,6 +1,8 @@
 format = """
-$directory\
+[╭─ ](238)$directory\
+$git_commit\
 $git_branch\
+$git_state\
 $git_status\
 $fill\
 $cmd_duration\
@@ -8,14 +10,14 @@ $username\
 $hostname\
 $time\
 $line_break\
-$character
+[╰─](238)$character
 """
 
 
 [directory]
 before_repo_root_style = 'dimmed 39'
-format = "[╭─ ](238)[$path]($style) "
-repo_root_format = "[╭─ ](238)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($before_repo_root_style) "
+format = "[$path]($style) "
+repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($before_repo_root_style) "
 repo_root_style = '39 bold'
 style = "39 bold"
 truncate_to_repo = false
@@ -24,43 +26,69 @@ truncation_length = 0
 
 [git_branch]
 format = "[$symbol]($style)[$branch](76)[(:$remote_branch)]($style) "
+only_attached = true
 symbol = ""
+
 
 [git_status]
 ahead = '[⇡$count](76)'
 behind = '[⇣$count](76)'
+conflicted = "[~$count](196)"
 deleted = '[✕$count](red) '
 format = '([($ahead_behind )]($style)[$all_status]($style) )'
 modified = '[!$count](178) '
-staged = '[+$count](178) '
+renamed = ""
+staged = "[+$count](178) "
 stashed = '[*$count](76) '
 untracked = '[?$count](75) '
-# renamed = "[r$count](24) "
+
+[git_state]
+am = "am"
+am_or_rebase = "am/rebase"
+bisect = "bisect"
+cherry_pick = "cherry-picking"
+format = "[$state( $progress_current/$progress_total)]($style) "
+merge = "merge"
+rebase = "rebase"
+revert = "revert"
+style = "196"
+
+
+[git_commit]
+commit_hash_length = 8
+format = "@[$hash$tag]($style) "
+style = "76"
+
 
 [cmd_duration]
 format = "[$duration]($style) "
 min_time = 0
 style = "101"
 
+
 [fill]
 symbol = " "
+
 
 [username]
 format = "[$user@]($style)"
 show_always = true
 style_user = "180"
 
+
 [hostname]
 format = "[$ssh_symbol$hostname]($style) "
 ssh_only = false
 style = "180"
+
 
 [time]
 disabled = false
 format = "[$time]($style) "
 style = "66"
 
+
 [character]
 error_symbol = "[❯](196)"
-format = "[╰─](238)$symbol "
+format = "$symbol "
 success_symbol = "[❯](76)"
