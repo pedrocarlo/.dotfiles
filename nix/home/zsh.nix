@@ -1,6 +1,6 @@
 { pkgs, zshPath, ... }: {
 
-  home.shell.enableZshIntegration = true;
+  home.shell.enableZshIntegration = false;
 
   programs.zsh = {
     enable = false;

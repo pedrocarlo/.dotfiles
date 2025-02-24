@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, username, ... }:
 
 {
   nix.settings = {
@@ -13,4 +13,12 @@
   nix.enable = true;
   nixpkgs.config.allowUnfree = true;
   # nix.package = pkgs.nix;
+
+  programs.zsh = {
+    enable = true;
+    interactiveShellInit = "nu";
+  };
+
+  users.users.${username}.shell = pkgs.nushell;
+  environment = { shellInit = "nu"; };
 }

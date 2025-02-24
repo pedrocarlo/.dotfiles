@@ -24,5 +24,10 @@
       defaultEditor = true;
       vimAlias = true;
     };
+
+    eza = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 }

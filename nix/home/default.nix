@@ -2,8 +2,15 @@
 
 {
   # import sub modules
-  imports =
-    [ ./core.nix ./git.nix ./zsh.nix ./nushell.nix ./bat.nix ./zoxide.nix ./starship.nix ];
+  imports = [
+    ./core.nix
+    ./git.nix
+    ./zsh.nix
+    ./nushell.nix
+    ./bat.nix
+    ./zoxide.nix
+    ./starship.nix
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

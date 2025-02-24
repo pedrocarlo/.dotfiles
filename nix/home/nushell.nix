@@ -23,6 +23,10 @@
 
       vi = "nvim";
       vim = "nvim";
+
+      cd = "z";
     };
+
+    extraConfig = "source ~/.config/config.nu";
   };
 }

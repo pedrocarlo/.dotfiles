@@ -22,7 +22,6 @@
         name = "config.nu";
       };
       configuration = { pkgs, ... }: {
-
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
       };
@@ -45,7 +44,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
-            users.users.${username}.home = "/Users/${username}";
+            users.users.${username} = { home = "/Users/${username}"; };
             home-manager.users.${username} = import ./nix/home;
           }
         ];
