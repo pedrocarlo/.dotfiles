@@ -29,12 +29,13 @@ symbol = ""
 [git_status]
 ahead = '[⇡$count](76)'
 behind = '[⇣$count](76)'
-deleted = '[$count](red) '
+deleted = '[✕$count](red) '
 format = '([($ahead_behind )]($style)[$all_status]($style) )'
 modified = '[!$count](178) '
 staged = '[+$count](178) '
 stashed = '[*$count](76) '
 untracked = '[?$count](75) '
+# renamed = "[r$count](24) "
 
 [cmd_duration]
 format = "[$duration]($style) "
