@@ -27,10 +27,10 @@ format = "[$symbol]($style)[$branch](76)[(:$remote_branch)]($style) "
 symbol = ""
 
 [git_status]
-ahead = '[($count](green)⇡'
-behind = '[($count](green)⇣'
+ahead = '[⇡$count](76)'
+behind = '[⇣$count](76)'
 deleted = '[$count](red) '
-format = '([$all_status$ahead_behind]($style) )'
+format = '([$ahead_behind $all_status]($style) )'
 modified = '[!$count](178) '
 staged = '[+$count](178) '
 stashed = '[*$count](76) '
