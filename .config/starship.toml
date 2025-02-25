@@ -33,7 +33,7 @@ symbol = ""
 [git_status]
 ahead = '[⇡$count](76)'
 behind = '[⇣$count](76)'
-conflicted = "[~$count](196)"
+conflicted = "[~$count](196) "
 deleted = '[✕$count](red) '
 format = '([($ahead_behind )]($style)[$all_status]($style) )'
 modified = '[!$count](178) '
