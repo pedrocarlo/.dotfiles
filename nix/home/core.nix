@@ -29,5 +29,12 @@
       enable = true;
       enableNushellIntegration = true;
     };
+
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      flags = [ "--disable-up-arrow" "--disable-ctrl-r" ];
+    };
   };
 }

@@ -51,6 +51,7 @@
     fastfetch
     starship
     carapace
+    atuin
 
     clang-tools
   ];
