@@ -13,7 +13,7 @@
 
     shellAliases = {
       ls =
-        "eza --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions --grid --show-symlinks --follow-symlinks";
+        "eza --color=auto --git --no-filesize --icons=always --no-time --no-user --no-permissions --grid";
 
       #-------------Bat related------------
       cat = "bat";
@@ -25,6 +25,8 @@
       vim = "nvim";
 
       cd = "z";
+
+      nix-rebuild = "darwin-rebuild switch --flake ~/.dotfiles#pedro";
     };
 
     extraConfig = "source ~/.config/config.nu";
