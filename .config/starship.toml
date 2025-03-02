@@ -35,6 +35,7 @@ ahead = '[⇡$count](76)'
 behind = '[⇣$count](76)'
 conflicted = "[~$count](196) "
 deleted = '[✕$count](red) '
+diverged = "[⇡$ahead_count](76)[⇣$behind_count](76)"
 format = '([($ahead_behind )]($style)[$all_status]($style) )'
 modified = '[!$count](178) '
 renamed = ""

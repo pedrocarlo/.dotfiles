@@ -12,6 +12,8 @@
     # sqlite
     pnpm
     rustup
+    python3
+    uv
     # misc
     tree
 
