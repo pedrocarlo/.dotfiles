@@ -52,6 +52,7 @@
     starship
     carapace
     atuin
+    fd
 
     clang-tools
   ];

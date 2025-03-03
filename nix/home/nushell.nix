@@ -7,6 +7,10 @@
     enableNushellIntegration = true;
   };
 
+  programs.fd = {
+    enable = true;
+  };
+
   programs.nushell = {
     enable = true;
     configFile.source = nushellPath;
@@ -27,6 +31,8 @@
       cd = "z";
 
       nix-rebuild = "darwin-rebuild switch --flake ~/.dotfiles#pedro";
+
+      find = "fd";
     };
 
     extraConfig = "source ~/.config/config.nu";
