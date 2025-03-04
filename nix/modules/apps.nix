@@ -36,6 +36,9 @@
     # nushell stuff
     nushell
 
+    # fish stuff 
+    # fish -> outdated. not 4.0 yet
+
     # zsh stuff
     oh-my-zsh
     zsh-powerlevel10k

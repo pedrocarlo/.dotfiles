@@ -13,7 +13,7 @@
 
   programs.nushell = {
     enable = true;
-    configFile.source = nushellPath;
+    # configFile.source = nushellPath;
 
     shellAliases = {
       ls =
