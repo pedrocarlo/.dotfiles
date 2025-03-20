@@ -1,0 +1,6 @@
+[table]
+column_colors = ["cyan"]
+header_color = "red"
+
+[syntax_highlight]
+# theme_name = "Am"
