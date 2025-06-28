@@ -2,5 +2,9 @@
 column_colors = ["cyan"]
 header_color = "red"
 
-[syntax_highlight]
-# theme_name = "Am"
+[highlight]
+enable = true
+# prompt = "#F34"
+theme = "Amy"
+# hint = "123"
+# candidate = "yellow"

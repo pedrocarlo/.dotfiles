@@ -1,0 +1,69 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "agent": {
+    "model_parameters": [],
+    "default_profile": "ask",
+    "version": "2"
+  },
+  "icon_theme": "VSCode Great Icons Theme",
+  "base_keymap": "VSCode",
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": true
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 12,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "VSCode Dark Modern"
+  },
+  "autosave": "on_focus_change",
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        "activate_script": "nushell"
+      }
+    },
+    "font_fallbacks": ["JetBrainsMono Nerd Font"]
+  },
+  "diagnostics": {
+    "include_warnings": false,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": "error"
+    }
+  },
+  "languages": {
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "ruff"
+        }
+      }
+    },
+    "Rust": {
+      "inlay_hints": {
+        "enabled": true
+      }
+    }
+  }
+}

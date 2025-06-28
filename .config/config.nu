@@ -45,5 +45,6 @@ $env.config = {
 }
 path add $"($env.HOME)/.local/bin";
 path add $"/opt/homebrew/bin";
+path add $"($env.HOME)/.cargo/bin";
 
 

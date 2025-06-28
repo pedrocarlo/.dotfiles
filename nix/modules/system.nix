@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 ###################################################################################
 #
@@ -13,6 +13,8 @@
     # Used for backwards compatibility, please read the changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 6;
+
+    primaryUser = username;
 
     defaults = {
       menuExtraClock.Show24Hour = true; # show 24 hour clock
