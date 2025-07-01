@@ -30,7 +30,7 @@
 
       cd = "z";
 
-      nix-rebuild = "darwin-rebuild switch --flake ~/.dotfiles#pedro";
+      nix-rebuild = "sudo darwin-rebuild switch --flake ~/.dotfiles#pedro";
 
       find = "fd";
     };

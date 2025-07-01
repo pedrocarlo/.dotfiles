@@ -56,6 +56,7 @@
     carapace
     atuin
     fd
+    jujutsu
 
     clang-tools
   ];
