@@ -1,8 +1,21 @@
 "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 
 [user]
-name = "pedrocarlo"
 email = "pedro.muniz.carlo@gmail.com"
+name = "pedrocarlo"
 
 [ui]
 default-command = "log"
+editor = "nvim"
+
+[[--scope]]
+--when.commands = ["status"]
+[--scope.ui]
+paginate = "never"
+
+[[--scope]]
+--when.commands = ["diff", "show"]
+[--scope.ui]
+pager = "delta"
+# NOTE: this is required when using `delta` as a pager
+diff.format = "git"
