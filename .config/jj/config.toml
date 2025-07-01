@@ -5,7 +5,7 @@ email = "pedro.muniz.carlo@gmail.com"
 name = "pedrocarlo"
 
 [ui]
-default-command = "log"
+default-command = ["log", "--limit", "10", "--no-pager"]
 editor = "nvim"
 
 [[--scope]]

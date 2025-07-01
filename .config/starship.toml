@@ -3,6 +3,7 @@ format = """
 $git_commit\
 $git_branch\
 $git_state\
+${custom.jj}\
 $git_status\
 $fill\
 $cmd_duration\
@@ -93,3 +94,11 @@ style = "66"
 error_symbol = "[❯](196)"
 format = "$symbol "
 success_symbol = "[❯](76)"
+
+[custom.jj]
+command = '''starship-jj --ignore-working-copy starship prompt'''
+detect_folders = [".jj"]
+format = "[$symbol](blue bold) $output "
+symbol = ""
+when = "jj root --ignore-working-copy"
+disabled = true

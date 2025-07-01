@@ -59,11 +59,6 @@ color = "Yellow"
 disabled = false
 text = "(IMMUTABLE)"
 
-[module.hidden]
-color = "Yellow"
-disabled = false
-text = "(HIDDEN)"
-
 [[module]]
 # Prints the amount of changes in the working copy
 color = "Magenta"
