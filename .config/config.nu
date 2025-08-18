@@ -6,6 +6,10 @@ let fish_completer = {|spans|
     | rename value description
 }
 
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell ...$spans | from json
+}
+
 # This completer will use carapace by default
 let external_completer = {|spans|
     let expanded_alias = scope aliases
@@ -25,6 +29,9 @@ let external_completer = {|spans|
         nu => $fish_completer
         # fish completes commits and branch names in a nicer way
         git => $fish_completer
+        jj => $carapace_completer
+        cargo => $carapace_completer
+        task => $carapace_completer
         _ => $fish_completer
         # _ => $carapace_completer
     } | do $in $spans
@@ -46,5 +53,6 @@ $env.config = {
 path add $"($env.HOME)/.local/bin";
 path add $"/opt/homebrew/bin";
 path add $"($env.HOME)/.cargo/bin";
+path add "/opt/homebrew/opt/make/libexec/gnubin";
 
 

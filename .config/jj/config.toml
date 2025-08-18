@@ -7,6 +7,7 @@ name = "pedrocarlo"
 [ui]
 default-command = ["log", "--limit", "10", "--no-pager"]
 editor = "nvim"
+merge-editor = "vscode"
 
 [[--scope]]
 --when.commands = ["status"]

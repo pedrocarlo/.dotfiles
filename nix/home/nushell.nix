@@ -22,7 +22,6 @@
       #-------------Bat related------------
       cat = "bat";
       diff = "batdiff";
-      rg = "batgrep";
       man = "batman";
 
       vi = "nvim";
